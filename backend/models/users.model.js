@@ -25,7 +25,7 @@ const usersSchema = new mongoose.Schema({
         required:[true, "Password is required"],
         trim:true,
         minlength:6,
-        //match:'/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/',
+       // match:'/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/',
     },
     phone:{
         type:String,

@@ -1,0 +1,16 @@
+<!-- {{allProducts|json}} -->
+<section class="container my-4">
+  <div class="row">
+    <div class="col-4 p-3" *ngFor="let product of allProducts">
+
+      <div class="m-4 border border-primary border-3">
+        <h4>{{product.productname}}</h4>
+        <h5>{{product.price}} LE</h5>
+        <h4>{{product.sale}}%</h4>
+        <!-- <img src="{{product.images[0].image}}" class="img-fluid"> -->
+        <!-- <img src="../../../../../backend/{{product.images[0].image}}" class="img-fluid"> -->
+
+      </div>
+    </div>
+  </div>
+</section>

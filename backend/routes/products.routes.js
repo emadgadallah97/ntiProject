@@ -7,7 +7,7 @@ const usersAuth = require("../middleware/users.auth")
 const {adminsAuth,ownerAuth,generalAuth} = require("../middleware/admins.auth")
 
 router.post('/add',adminsAuth, productsController.add)
-router.get('',generalAuth, productsController.allProducts)
+router.get('', productsController.allProducts)
 router.get('/:id',generalAuth, productsController.product)
 router.post('/edit/:id',adminsAuth, productsController.edit)
 router.delete('/delete/:id',adminsAuth, productsController.deleteProduct)
