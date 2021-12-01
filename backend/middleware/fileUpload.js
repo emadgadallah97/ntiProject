@@ -5,8 +5,8 @@ const fs = require("fs")
 const storage = multer.diskStorage({
     destination: function(req, file, cb){
         let loc
-        if(!req.params.id) loc = "uploads/"
-        else loc = path.join("uploads", (req.params.id))  // uploads/5
+        if(!req.params.id) loc = "../frontend/src/assets/productsImages"
+        else loc = path.join("../frontend/src/assets/productsImages", (req.params.id))  // uploads/5
         fs.mkdir(loc, (err)=>{})
         cb(null, loc)
     },

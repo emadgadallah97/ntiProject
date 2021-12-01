@@ -95,10 +95,24 @@ class Products {
         }
     }
     //add product image
+    // static addImage = async(req, res) =>{
+    //     try{
+    //         req.files.forEach(async function(e,i) {
+    //         const imgPath="uploads/"+ req.params.id +"/"+ req.files[i].filename
+    //         const productImg = await productsModel.updateOne({ _id: req.params.id }
+    //             ,{ $push: { images:[{image:imgPath}] } })
+    //         })
+    //         res.status(200).send({apiStatus:true, message:"image added successfuly"})
+    //     }
+    //     catch(e){
+    //         res.send({e})
+    //     }
+    
+    // }
     static addImage = async(req, res) =>{
         try{
             req.files.forEach(async function(e,i) {
-            const imgPath="uploads/"+ req.params.id +"/"+ req.files[i].filename
+            const imgPath="assets/productsImages/"+ req.params.id +"/"+ req.files[i].filename
             const productImg = await productsModel.updateOne({ _id: req.params.id }
                 ,{ $push: { images:[{image:imgPath}] } })
             })

@@ -32,17 +32,32 @@ export class UsersLoginComponent implements OnInit {
       this._auth.usersLogin(this.loginForm.value).subscribe(
         (res)=>{
           console.log(res)
+          this._auth.userData= res.data.user
           localStorage.setItem('userToken',res.data.token)
         },
         (err)=>{
-console.log(err)
+        console.log(err)
           this.invalidData=true
         },
         ()=>{
 
-            this.loginForm.reset()
-            this.isSubmitted=false
-            this._router.navigateByUrl('/home')
+      this._auth.userProfile().subscribe(
+            ()=> {},
+            ()=> {
+             this._auth.isAuthed=false
+
+            },
+            ()=> {
+             this._auth.isAuthed=true
+             this.loginForm.reset()
+             this.isSubmitted=false
+             this._router.navigateByUrl('/home')
+
+            }
+           )
+
+
+
         }
       )
     }

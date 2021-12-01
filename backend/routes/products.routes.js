@@ -13,5 +13,5 @@ router.post('/edit/:id',adminsAuth, productsController.edit)
 router.delete('/delete/:id',adminsAuth, productsController.deleteProduct)
 router.post('/:id/addToCart',usersAuth, productsController.addToCart)
 
-router.post('/:id/addImage', adminsAuth, upload.array('img'),productsController.addImage )
+router.post('/:id/addImage',  upload.array('img'),productsController.addImage )
 module.exports = router

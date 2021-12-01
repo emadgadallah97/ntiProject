@@ -1,0 +1,40 @@
+<section class="container my-5" >
+
+
+
+  <form [formGroup]="editForm" (ngSubmit)="handelEdit()">
+    <div class="mb-5 row">
+      <div class="mb-3 col-12">
+        <input class="form-control"  placeholder="name" formControlName="name">
+        <div class="my-3 alert alert-danger" *ngIf="name?.invalid && (isSubmitted || name?.dirty || name?.touched)">
+          <p *ngIf="name?.errors?.['required']"> Name Is Required</p>
+          <p *ngIf="name?.errors?.['minlength']"> Name Must Be More Than 3 charachters</p>
+        </div>
+      </div>
+      <div class="mb-3 col-12">
+        <input class="form-control"  placeholder="email" formControlName="email" type="email" (input)="this.emailUsedBefore=false">
+        <div class="my-3 alert alert-danger" *ngIf="email?.invalid && (isSubmitted || email?.dirty || email?.touched)">
+          <p *ngIf="email?.errors?.['required']"> Email Is Required</p>
+          <p *ngIf="email?.errors?.['email']"> Enter Correct Email</p>
+        </div>
+        <div class="my-3 alert alert-danger" *ngIf="emailUsedBefore">
+          <p > Email Used Before</p></div>
+ </div>
+
+      <div class="mb-3 col-12">
+        <input class="form-control"  placeholder="phone" formControlName="phone" name="phone">
+        <div class="my-3 alert alert-danger" *ngIf="phone?.invalid && (isSubmitted || phone?.dirty || phone?.touched)">
+          <p *ngIf="phone?.errors?.['required']"> Phone Is Required</p>
+        </div>
+      </div>
+
+      <div class="mb-3 col-12">
+        <input class="form-control"  placeholder="birthDate"  formControlName="birthDate" type="date" >
+      </div>
+
+
+<button class="form-control btn btn-warning">Edit</button>
+</div>
+  </form>
+<button class="form-control btn btn-danger" (click)="logoutAll()">Logout From All Devices</button>
+</section>

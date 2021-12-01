@@ -1,0 +1,40 @@
+<!-- {{cartData|json}} -->
+<section class="container">
+  <div class="mt-4">
+    <a class="form-control btn btn-success" routerLink="../makeOrder">Make Order</a>
+  </div>
+
+<table class="table my-4">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Product Name</th>
+      <th scope="col">Brand</th>
+      <th scope="col">discription</th>
+      <th scope="col">Price</th>
+      <th scope="col">Sale</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Total Price</th>
+      <th scope="col">Actions</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of cartData;let i=index">
+      <th scope="row">{{i+1}}</th>
+      <td>{{item.productname}}</td>
+      <td>{{item.brand}}</td>
+      <td>{{item.discription}}</td>
+      <td>{{item.price}} LE</td>
+      <td>{{item.sale}} %</td>
+      <td>{{item.quantity}} <button class="btn btn-warning">Edit</button></td>
+      <td>{{item.total}} LE</td>
+      <td><button class="btn btn-danger">Remove Item</button>
+
+      </td>
+
+    </tr>
+
+  </tbody>
+</table>
+</section>

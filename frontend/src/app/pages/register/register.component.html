@@ -8,6 +8,8 @@
         <input class="form-control"  placeholder="name" formControlName="name">
         <div class="my-3 alert alert-danger" *ngIf="name?.invalid && (isSubmitted || name?.dirty || name?.touched)">
         <p *ngIf="name?.errors?.['required']"> Name Is Required</p>
+        <p *ngIf="name?.errors?.['minlength']"> Name Must Be More Than 3 charachters</p>
+
       </div>
       </div>
       <div class="mb-3 col-12">

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { showAllProducts } from 'src/app/providers/allProducts/products.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-home',
@@ -9,13 +10,15 @@ import { showAllProducts } from 'src/app/providers/allProducts/products.service'
 export class HomeComponent implements OnInit {
 
   allProducts: any[] = []
+  finalPrice :any
   constructor(private _show:showAllProducts) { }
 
   ngOnInit(): void {
     this._show.showProducts().subscribe(data=>{
       // console.log(data)
       this.allProducts=data.data
-      console.log( data.data[0].images[0].image)
+
+      // console.log( this.allProducts[0].images[0].image)
     })
   }
 

@@ -36,6 +36,11 @@ const adminsSchema = new mongoose.Schema({
         }
 
     },
+    // type:{
+    //     type:String,
+    //     value:"admin"
+        
+    // },
     role:{
         type:String,
         enum:["owner","superAdmin","admin"],

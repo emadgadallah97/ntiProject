@@ -53,7 +53,11 @@ class Users {
             return t.token!= req.token
         })
         await req.user.save()
-        res.send('done')
+        res.send({
+            apiStatus: true,
+            message:"you are looged out"
+            
+        })
     }
     //delete user
     static deleteUser = async(req,res)=>{
@@ -86,18 +90,18 @@ class Users {
         }
     }
     //add product to cart
-    static addToCart = async(req,res)=>{
-        try{
-          let finalPrice=req.body.price - ((req.body.sale * req.body.price)/100)
-           let totalp= finalPrice * req.body.quantity
-        req.body.total=totalp
-            const user = await usersModel.updateOne({ _id: req.user._id },{ $push: { cart: req.body} })
-            res.status(200).send({apiStatus:true, message:"data added successfuly"})
-        }
-        catch(e){
-            res.status(500).send({apiStatus:false, message:e.message})
-        }
-    }
+    // static addToCart = async(req,res)=>{
+    //     try{
+    //       let finalPrice=req.body.price - ((req.body.sale * req.body.price)/100)
+    //        let totalp= finalPrice * req.body.quantity
+    //     req.body.total=totalp
+    //         const user = await usersModel.updateOne({ _id: req.user._id },{ $push: { cart: req.body} })
+    //         res.status(200).send({apiStatus:true, message:"data added successfuly"})
+    //     }
+    //     catch(e){
+    //         res.status(500).send({apiStatus:false, message:e.message})
+    //     }
+    // }
 }
 
 module.exports = Users

@@ -1,0 +1,41 @@
+<section class="container my-4" *ngIf="isLoaded==true">
+  <form [formGroup]="addToCartForm" (ngSubmit)="handelAdd()">
+    <select class="form-select my-2" aria-label="Default select example" formControlName="quantity">
+      <option selected>Select Amount</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+    </select>
+    <button class="form-control btn btn-warning">Add To Cart</button>
+  </form>
+<dl class="row">
+  <dt class="col-sm-3">Product Name</dt>
+  <dd class="col-sm-9">{{productDetails.productname}}</dd>
+
+  <dt class="col-sm-3">Description</dt>
+  <dd class="col-sm-9">
+    <p>{{productDetails.category}} From {{productDetails.brand}}</p>
+    <p>{{productDetails.discription}}</p>
+  </dd>
+
+  <dt class="col-sm-3">Sale</dt>
+  <dd class="col-sm-9">{{productDetails.sale}}%</dd>
+
+  <dt class="col-sm-3 text-truncate">Price</dt>
+  <dd class="col-sm-9"><del>{{productDetails.price}}</del> LE<br>{{finalPrice}} LE</dd>
+
+  <dt class="col-sm-3 ">Product Images</dt>
+  <dd class="col-sm-9">
+    <dl class="row">
+
+      <div *ngFor="let img of images">
+        <img [src]="img.image">
+      </div>
+
+    </dl>
+  </dd>
+</dl>
+</section>

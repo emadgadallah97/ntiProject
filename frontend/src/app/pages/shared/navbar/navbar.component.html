@@ -1,7 +1,8 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="isLoaded">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -9,20 +10,44 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" routerLink="home">Home</a>
         </li>
-         <li class="nav-item">
-          <a class="nav-link" routerLink="profile">Profile</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="login">login</a>
-        </li>
 
-        <li class="nav-item">
-          <a class="nav-link" routerLink="register">register</a>
-        </li>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0" *ngIf="_auth.isAuthed;
+        else notAuthed">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="cart">My Cart</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="orders">My Orders</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="editProfile">Edit Profile</a>
+          </li>
 
-      </ul>
+          <li class="nav-item">
+            <button class="btn btn-danger " (click)="logout()">Logout</button>
+          </li>
+
+        </ul>
+        <ng-template #notAuthed>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="login">login</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="register">register</a>
+          </li>
+        </ng-template>
+<!-- {{_adminAuth.isAuthed}} -->
+          <!-- <ul class="navbar-nav me-auto mb-2 mb-lg-0" *ngIf="_adminAuth.isAuthed"> -->
+            <ul>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="admins/allProducts">All Products</a>
+            </li>
+          </ul>
+        </ul>
+</div>
+
+
 
     </div>
-  </div>
 </nav>
-

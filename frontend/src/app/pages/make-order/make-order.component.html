@@ -1,0 +1,37 @@
+<section class="container my-5">
+
+  <form [formGroup]="orderForm" (ngSubmit)="handelorder()">
+      <div class="mb-3 col-12">
+        <select class="form-select my-2" aria-label="Default select example" formControlName="paymentMethod">
+          <option value="CACH" [selected]="true">CACH</option>
+          <option value="VISA">VISA</option>
+          <option value="MASTERCARD">MASTERCARD</option>
+          <option value="PAYPAL">PAYPAL</option>
+        </select>
+      </div>
+      <div class="mb-3 col-12">
+        <input class="form-control"  placeholder="deliveryAddress" formControlName="deliveryAddress" >
+        <div class="my-3 alert alert-danger" *ngIf="deliveryAddress?.invalid && (isSubmitted || deliveryAddress?.dirty || deliveryAddress?.touched)">
+          <p *ngIf="deliveryAddress?.errors?.['required']"> deliveryAddress Is Required</p>
+          <p *ngIf="deliveryAddress?.errors?.['minlength']">Address Must Be more than 5 charachters</p>
+          <p *ngIf="deliveryAddress?.errors?.['maxlength']">Address Must Be less than 50 charachters</p>
+
+        </div>
+
+      </div>
+
+      <div class="mb-3 col-12">
+        <input class="form-control"  placeholder="phone" formControlName="phone" name="phone">
+        <div class="my-3 alert alert-danger" *ngIf="phone?.invalid && (isSubmitted || phone?.dirty || phone?.touched)">
+          <p *ngIf="phone?.errors?.['required']"> Phone Is Required</p>
+        </div>
+      </div>
+
+
+
+<button class="form-control btn btn-success">Confirm Order</button>
+
+  </form>
+
+</section>
+

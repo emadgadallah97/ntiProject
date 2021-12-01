@@ -36,6 +36,10 @@ const usersSchema = new mongoose.Schema({
         // }
 
     },
+    role:{
+        type:String,
+        required:[true, "you must be enter the role"]
+    },
     birthDate:{
         type:Date
     },

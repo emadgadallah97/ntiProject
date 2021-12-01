@@ -17,15 +17,15 @@ const ordersSchema = new mongoose.Schema({
         type:String,
         required:[true],
         trim:true,
-        minlength:10,
+        minlength:5,
     },
     phone:{
         type:String,
         required:[true, "phone number is required"],
         trim:true,
-        validate(value){
-            if(!validator.isMobilePhone(value,['ar-EG'])) throw new Error("invalid phone number")
-        }
+        // validate(value){
+        //     if(!validator.isMobilePhone(value,['ar-EG'])) throw new Error("invalid phone number")
+        // }
 
     },
     orderDetails:[
