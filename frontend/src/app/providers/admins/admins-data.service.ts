@@ -22,4 +22,7 @@ export class AdminsDataService {
     adminProfile(): Observable<any>{
             return this._http.get(`${this.commonLink}profile`)
               }
+    logout(): Observable<any>{
+                return this._http.post(`${this.commonLink}logout`,null)
+                  }
 }

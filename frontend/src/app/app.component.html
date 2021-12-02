@@ -1,3 +1,10 @@
-<app-navbar></app-navbar>
+
+<app-admin-nav *ngIf="role=='owner' ||role=='admin' else user"></app-admin-nav>
+<ng-template #user>
+<app-navbar *ngIf="role==1  else log"></app-navbar>
+<ng-template #log>
+  <app-user-login ></app-user-login>
+</ng-template>
+</ng-template>
 <router-outlet></router-outlet>
 

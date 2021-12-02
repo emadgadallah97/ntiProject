@@ -19,6 +19,11 @@ import { OrderDetailsComponent } from './pages/order-details/order-details.compo
 import { AdminsLoginComponent } from './pages/admins/admins-login/admins-login.component';
 import { ShowAllProductsComponent } from './pages/admins/products/show-all-products/show-all-products.component';
 import { AdminsInterceptor } from './providers/admins/admins.interceptor';
+import { AdminNavComponent } from './pages/shared/navbar/admin-nav/admin-nav.component';
+import { UserLoginComponent } from './pages/shared/navbar/user-login/user-login.component';
+import { AddProductComponent } from './pages/admins/products/add-product/add-product.component';
+import { AllOrdersComponent } from './pages/admins/orders/all-orders/all-orders.component';
+import { OrdersDetailsComponent } from './pages/admins/orders/orders-details/orders-details.component';
 
 
 
@@ -37,6 +42,11 @@ import { AdminsInterceptor } from './providers/admins/admins.interceptor';
     OrderDetailsComponent,
     AdminsLoginComponent,
     ShowAllProductsComponent,
+    AdminNavComponent,
+    UserLoginComponent,
+    AddProductComponent,
+    AllOrdersComponent,
+    OrdersDetailsComponent
   ],
   imports: [
     BrowserModule,

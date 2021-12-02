@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminsLoginComponent } from './pages/admins/admins-login/admins-login.component';
+import { AllOrdersComponent } from './pages/admins/orders/all-orders/all-orders.component';
+import { OrdersDetailsComponent } from './pages/admins/orders/orders-details/orders-details.component';
 import { AddProductComponent } from './pages/admins/products/add-product/add-product.component';
 import { ShowAllProductsComponent } from './pages/admins/products/show-all-products/show-all-products.component';
 import { CartComponent } from './pages/cart/cart.component';
@@ -27,7 +29,9 @@ const routes: Routes = [
   {path:"orders/orderDetails/:id",component:OrderDetailsComponent,canActivate:[UserAuthGuard]},
   {path:"admin/login",component:AdminsLoginComponent},
   {path:"admins/allProducts",component:ShowAllProductsComponent},
-  {path:"admins/addProduct", component:AddProductComponent}
+  {path:"admins/addProduct", component:AddProductComponent},
+  {path:"admins/allOrders",component:AllOrdersComponent},
+  {path:"admins/ordersDetails/:id",component:OrdersDetailsComponent}
 
 ];
 

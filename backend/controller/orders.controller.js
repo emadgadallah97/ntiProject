@@ -13,6 +13,16 @@ class Orders {
             res.status(500).send({apiStatus:false, message:e.message})
         }
     }
+    //show all oredrs
+    static allOredrs = async(req, res)=>{
+        try{
+            const oredrsData = await ordersModel.find()
+            res.status(200).send({apiStatus:true, message:"All orders", data: oredrsData})
+        }
+        catch(e){
+            res.status(500).send({apiStatus:false, message:e.message})
+        }
+    }
     //show user orders
     static userOrders= async(req,res)=>{
         try{

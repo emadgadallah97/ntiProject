@@ -34,7 +34,9 @@ class Users {
     }
     //show logged in user details
     static profile =async(req,res)=>{
-        res.send(req.user)
+        // res.send(req.user)
+        res.status(200).send({apiStatus:true, message:"profile", data: req.user,role:1})
+
     }
     //logout from all
     static logoutAll=async(req,res)=>{

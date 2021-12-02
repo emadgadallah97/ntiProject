@@ -51,12 +51,10 @@ export class AdminsLoginComponent implements OnInit {
 
             },
             ()=> {
-              console.log("kjsdhfkshdkasd;fjasdl;j")
              this._auth.isAuthed=true
              this.loginForm.reset()
              this.isSubmitted=false
              this._router.navigateByUrl('/home')
-            // this._router.navigateByUrl('/home')
 
             }
            )

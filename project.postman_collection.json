@@ -1,0 +1,1020 @@
+{
+	"info": {
+		"_postman_id": "8035a501-2499-4e74-b710-02c82642fefd",
+		"name": "project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Admins",
+			"item": [
+				{
+					"name": "admins registration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"emad\",\r\n    \"email\":\"em@fem.Em\",\r\n    \"password\":\"151814hjghdftdtfrDSGDSGD\",\r\n    \"phone\":\"01016974409\",\r\n    \"role\":\"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/admins/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"admins",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show all admins",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"emad\",\r\n    \"email\":\"easadjk@ahh.com\",\r\n    \"password\":\"123456\",\r\n    \"phone\":\"01016974409\",\r\n    \"role\":\"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/admins",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"admins"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admins login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"email\":\"sa@faa.fa\",\r\n    \"password\":\"123456\"\r\n   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/admins/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"admins",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admin profile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Auth",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTlhODQzNzM1NTBhNTIyYWQzZmZkMWIiLCJpYXQiOjE2Mzc1MTYzNTN9.UEB8sTewCgyzz1VO5dA72IQxbzp0Ik52OyXQDrMCyZQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"email\":\"emsad@gmail.com\",\r\n    \"password\":\"123456\"\r\n   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/admins/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"admins",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admins logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Auth",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTk5MWE1ZTZiZmIyMmVhODgzZDg1MmYiLCJpYXQiOjE2Mzc0MzAxMTR9.D4S5vs3nUwxdOgKRwWYBWhhy90rWqDm8N4jamMf_NNI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"email\":\"emsad@gmail.com\",\r\n    \"password\":\"123456\"\r\n   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/admins/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"admins",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admins logout from all",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Auth",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTk5MWE1ZTZiZmIyMmVhODgzZDg1MmYiLCJpYXQiOjE2Mzc0MzQ5NzR9.h__rmDa3ZhNHaA0aqrFfjOBofdYKAW2k5QmcGQGFgNM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"email\":\"emsad@gmail.com\",\r\n    \"password\":\"123456\"\r\n   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/admins/logoutAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"admins",
+								"logoutAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admins edit data",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Auth",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTk5MWE1ZTZiZmIyMmVhODgzZDg1MmYiLCJpYXQiOjE2Mzc0MzcxNTR9.Yo9SrpZkXUIpVkWdUfypFpYQtL4A3wcvQB4toJkyfaY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n     \"name\":\"alii\",\r\n    \"email\":\"e@e.e\",\r\n    \"phone\":\"0101619778\",\r\n    \"role\":\"owner\"\r\n   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/admins/edit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"admins",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete admin",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Auth",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTk5MWE1ZTZiZmIyMmVhODgzZDg1MmYiLCJpYXQiOjE2Mzc0MzQ5NzR9.h__rmDa3ZhNHaA0aqrFfjOBofdYKAW2k5QmcGQGFgNM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"email\":\"emsad@gmail.com\",\r\n    \"password\":\"123456\"\r\n   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/admins/delete/619827e68c391ba2f271110d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"admins",
+								"delete",
+								"619827e68c391ba2f271110d"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "users login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"email\":\"omda@gmail.com\",\r\n    \"password\":\"123456\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"omda\",\r\n    \"email\":\"omda@gmail.com\",\r\n    \"password\":\"123456\",\r\n    \"phone\":\"01001654921\",\r\n    \"birthDate\":\"8/9/1997\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show all users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"email\":\"omdad@gmail.com\",\r\n    \"password\":\"123456\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users/allUsers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"allUsers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "users profile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Auth",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTljMTAzMzU0N2RkMDRkZjhjNmZlMjEiLCJpYXQiOjE2Mzc2MTc3MzN9.iuY9Okvukwi7kHi0I9UOj0wWgZN05yCTtYbozga4BWs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"email\":\"omdad@gmail.com\",\r\n    \"password\":\"123456\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "users logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Auth",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTk5NzAxYmVhYjJhOTM2MDFjMjI2YmEiLCJpYXQiOjE2Mzc0NDU2Njd9.ZRsqWDHCPa-HzclNzpm67EUo9N5_cSJ6P474_s06hd8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"email\":\"omdad@gmail.com\",\r\n    \"password\":\"123456\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "users logout all",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Auth",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTk5NjhiOTNiM2IxZGRhYzgyMDJjOWQiLCJpYXQiOjE2Mzc0NDQxOTd9.KkCIWM-LM2YgjpdSRL7ty9oAAOyy_5S0hhlUZYahe1o",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"email\":\"omdad@gmail.com\",\r\n    \"password\":\"123456\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users/logoutAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"logoutAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Auth",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTk5NjhiOTNiM2IxZGRhYzgyMDJjOWQiLCJpYXQiOjE2Mzc0NDQ4NDh9.5a2KL8wLc96IVvD0w2jQ3jkokNjZF8F9H5PBMs56btQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"email\":\"omdad@gmail.com\",\r\n    \"password\":\"123456\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users/delete/619968b93b3b1ddac8202c9d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"delete",
+								"619968b93b3b1ddac8202c9d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user edit data",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Auth",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTk5NzAxYmVhYjJhOTM2MDFjMjI2YmEiLCJpYXQiOjE2Mzc0NDU5MDV9.h8YP5Jo017CbXw0x3XiIsU3eJplmdokOYWOGWXbAP3Y",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"emad\",\r\n    \"email\":\"omdaa@gmail.com\",\r\n    \"password\":\"123456\",\r\n    \"phone\":\"01000000021\",\r\n    \"birthDate\":\"8/9/1997\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users/edit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add product to cart",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Auth",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTljMTAzMzU0N2RkMDRkZjhjNmZlMjEiLCJpYXQiOjE2Mzc2MTc3MzN9.iuY9Okvukwi7kHi0I9UOj0wWgZN05yCTtYbozga4BWs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"quantity\":3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/products/619c2b1f35530d0ec660d213/addToCart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"products",
+								"619c2b1f35530d0ec660d213",
+								"addToCart"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "add product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Auth",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTlhODQzNzM1NTBhNTIyYWQzZmZkMWIiLCJpYXQiOjE2Mzc1MTYzNTN9.UEB8sTewCgyzz1VO5dA72IQxbzp0Ik52OyXQDrMCyZQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productname\":\"iphone11 pro\",\r\n    \"category\":\"mobile phone\",\r\n    \"brand\":\"apple\",\r\n    \"price\":15000,\r\n    \"sale\":5,\r\n    \"amount\":10,\r\n    \"discription\":\"this a mobile phone from apple\",\r\n    \"images\":[{\r\n        \"image\":\"link1\" },\r\n        {\r\n        \"image\":\"link2\" }]\r\n    \r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/products/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"products",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show all products",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Auth",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTlhODQzNzM1NTBhNTIyYWQzZmZkMWIiLCJpYXQiOjE2Mzc1MTYzNTN9.UEB8sTewCgyzz1VO5dA72IQxbzp0Ik52OyXQDrMCyZQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"iphone13 pro\",\r\n    \"category\":\"mobile phone\",\r\n    \"brand\":\"apple\",\r\n    \"price\":15000,\r\n    \"sale\":5,\r\n    \"amount\":10,\r\n    \"description\":\"this a mobile phone from apple\"\r\n    \r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show single product",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"iphone13 pro\",\r\n    \"category\":\"mobile phone\",\r\n    \"brand\":\"apple\",\r\n    \"price\":15000,\r\n    \"sale\":5,\r\n    \"amount\":10,\r\n    \"description\":\"this a mobile phone from apple\"\r\n    \r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/products/6199841af4fbdcd98be0a3f0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"products",
+								"6199841af4fbdcd98be0a3f0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"iphone12 pro max\",\r\n    \"category\":\"mobile phone\",\r\n    \"brand\":\"apple\",\r\n    \"price\":16000,\r\n    \"sale\":5,\r\n    \"amount\":10,\r\n    \"description\":\"this a mobile phone from apple\"\r\n    \r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/products/edit/6199841af4fbdcd98be0a3f0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"products",
+								"edit",
+								"6199841af4fbdcd98be0a3f0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"iphone12 pro max\",\r\n    \"category\":\"mobile phone\",\r\n    \"brand\":\"apple\",\r\n    \"price\":16000,\r\n    \"sale\":5,\r\n    \"amount\":10,\r\n    \"description\":\"this a mobile phone from apple\"\r\n    \r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/products/delete/6199841af4fbdcd98be0a3f0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"products",
+								"delete",
+								"6199841af4fbdcd98be0a3f0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add product images",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Auth",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTlhODQzNzM1NTBhNTIyYWQzZmZkMWIiLCJpYXQiOjE2Mzc1MTYzNTN9.UEB8sTewCgyzz1VO5dA72IQxbzp0Ik52OyXQDrMCyZQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "img",
+									"type": "file",
+									"src": [
+										"/C:/Users/m/Desktop/Screenshot (1).png",
+										"/C:/Users/m/Desktop/Screenshot (3).png",
+										"/C:/Users/m/Desktop/Screenshot (4).png"
+									]
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/products/619c2b1f35530d0ec660d213/addImage",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"products",
+								"619c2b1f35530d0ec660d213",
+								"addImage"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "orders",
+			"item": [
+				{
+					"name": "add order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Auth",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTk5NzAxYmVhYjJhOTM2MDFjMjI2YmEiLCJpYXQiOjE2Mzc0NDU5MDV9.h8YP5Jo017CbXw0x3XiIsU3eJplmdokOYWOGWXbAP3Y",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"paymentMethod\":\"cash\",\r\n    \"deliveryAddress\":\"12 nasr city\",\r\n    \"phone\":\"01016974409\",\r\n    \"orderDetails\":[\r\n        {\"productname\":\"mobile phone\"},\r\n        {\"brand\":\"apple\"},\r\n        {\"discription\":\"mobile description\"},\r\n        {\"price\":1000},\r\n        {\"sale\":0},\r\n        {\"quantity\":1},\r\n        {\"total\":1000}\r\n       \r\n\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/orders/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"orders",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user orders",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Auth",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTljMTAzMzU0N2RkMDRkZjhjNmZlMjEiLCJpYXQiOjE2Mzc2MTc3MzN9.iuY9Okvukwi7kHi0I9UOj0wWgZN05yCTtYbozga4BWs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"paymentMethod\":\"cash\",\r\n    \"deliveryAddress\":\"elgalaa st\",\r\n    \"phone\":\"01006055487\",\r\n    \"orderDetails\":[\r\n        {\r\n            \"productname\":\"mobile phone\",\r\n        \"brand\":\"apple\",\r\n        \"discription\":\"mobile description\",\r\n        \"price\":1000,\r\n        \"sale\":0,\r\n        \"quantity\":1,\r\n        \"total\":1000\r\n        }\r\n       \r\n\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add to cart",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Auth",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTljMTAzMzU0N2RkMDRkZjhjNmZlMjEiLCJpYXQiOjE2Mzc2MTc3MzN9.iuY9Okvukwi7kHi0I9UOj0wWgZN05yCTtYbozga4BWs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"productname\":\"smart Tv\",\r\n        \"brand\":\"samsung\",\r\n        \"discription\":\"description sdf sdf\",\r\n        \"price\":2000,\r\n        \"sale\":5,\r\n        \"quantity\":2,\r\n        \"total\":\"\"\r\n       \r\n\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users/addToCart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"addToCart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "make order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Auth",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTljMTAzMzU0N2RkMDRkZjhjNmZlMjEiLCJpYXQiOjE2Mzc2MTc3MzN9.iuY9Okvukwi7kHi0I9UOj0wWgZN05yCTtYbozga4BWs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"paymentMethod\":\"cach\",\r\n        \"deliveryAddress\":\"16 naser street\",\r\n        \"phone\":\"01016997546\"\r\n       \r\n\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/orders/makeOrder",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"orders",
+								"makeOrder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show all oredrs",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Auth",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTlhODQzNzM1NTBhNTIyYWQzZmZkMWIiLCJpYXQiOjE2Mzg0Nzc2OTB9.-Q8tnhcD4OqXqPEzS9-hzsUy7Z-Tm6OXtWws4r5TxwE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"paymentMethod\":\"cash\",\r\n    \"deliveryAddress\":\"12 nasr city\",\r\n    \"phone\":\"01016974409\",\r\n    \"orderDetails\":[\r\n        {\"productname\":\"mobile phone\"},\r\n        {\"brand\":\"apple\"},\r\n        {\"discription\":\"mobile description\"},\r\n        {\"price\":1000},\r\n        {\"sale\":0},\r\n        {\"quantity\":1},\r\n        {\"total\":1000}\r\n       \r\n\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/orders/allOredrs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"orders",
+								"allOredrs"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

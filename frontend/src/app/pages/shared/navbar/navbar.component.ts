@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { usersRegisterationService } from 'src/app/providers/services/users-registeration.service';
 import { Router } from '@angular/router';
-import { AdminsDataService } from 'src/app/providers/admins/admins-data.service';
 
 @Component({
   selector: 'app-navbar',
@@ -11,13 +10,14 @@ import { AdminsDataService } from 'src/app/providers/admins/admins-data.service'
 export class NavbarComponent implements OnInit {
 
   isLoaded = false
-
-  constructor(public _auth:usersRegisterationService,private _router:Router,public _adminAuth:AdminsDataService) { }
+role:any
+  constructor(public _auth:usersRegisterationService,private _router:Router) { }
 
   ngOnInit(): void {
     this._auth.userProfile().subscribe(
      (data)=> {
-       this._auth.userData = data
+       this._auth.userData = data.data
+       this.role=data.role
      },
      ()=> {
       this.isLoaded=true
@@ -28,25 +28,26 @@ export class NavbarComponent implements OnInit {
       this.isLoaded=true
       this._auth.isAuthed=true
 
+// console.log(this._auth.userData)
      }
     )
 
 //admins part
-    this._adminAuth.adminProfile().subscribe(
-      (data)=> {
-        this._adminAuth.adminData = data
-      },
-      ()=> {
-       this.isLoaded=true
-       this._auth.isAuthed=false
+    // this._adminAuth.adminProfile().subscribe(
+    //   (data)=> {
+    //     this._adminAuth.adminData = data
+    //   },
+    //   ()=> {
+    //    this.isLoaded=true
+    //    this._auth.isAuthed=false
 
-      },
-      ()=> {
-       this.isLoaded=true
-       this._auth.isAuthed=true
+    //   },
+    //   ()=> {
+    //    this.isLoaded=true
+    //    this._auth.isAuthed=true
 
-      }
-     )
+    //   }
+    //  )
 
   }
   logout(){

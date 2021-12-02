@@ -16,4 +16,7 @@ export class OrdersDataService {
   getUserOrders(): Observable<any>{
         return this._http.get(`${this.commonLink}`)
           }
+  getAllOrders(): Observable<any>{
+            return this._http.get(`${this.commonLink}allOredrs`)
+              }
 }

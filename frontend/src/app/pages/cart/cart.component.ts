@@ -13,7 +13,7 @@ cartData :any
   ngOnInit(): void {
     this._cart.userProfile().subscribe((data)=>{
 
-      this.cartData=data.cart
+      this.cartData=data.data.cart
     })
 
   }

@@ -8,12 +8,14 @@ import { showAllProducts } from 'src/app/providers/allProducts/products.service'
   styleUrls: ['./add-product.component.css']
 })
 export class AddProductComponent implements OnInit {
+
   isSubmitted : boolean = false
-  productNameUsedBefore :boolean = false
+  productnameUsedBefore :boolean = false
+
   addProductForm = new FormGroup({
-    productName:new FormControl('',[Validators.required,Validators.minLength(5),Validators.maxLength(40)]),
+    productname:new FormControl('',[Validators.required,Validators.minLength(5),Validators.maxLength(40)]),
     category:new FormControl('',[Validators.required,Validators.maxLength(20)]),
-    brand:new FormControl('',[Validators.required,Validators.minLength(20)]),
+    brand:new FormControl('',[Validators.required,Validators.maxLength(20)]),
     price:new FormControl('',[Validators.min(1),Validators.required]),
     sale:new FormControl(''),
     amount:new FormControl('',[Validators.min(1),Validators.required]),
@@ -25,13 +27,13 @@ export class AddProductComponent implements OnInit {
 
     ngOnInit(): void {
     }
-    // get productName(){return this.addProductForm.get('productName')}
-    // get category(){return this.addProductForm.get('category')}
-    // get brand(){return this.addProductForm.get('brand')}
-    // get price(){return this.addProductForm.get('price')}
-    // get sale(){return this.addProductForm.get('sale')}
-    // get amount(){return this.addProductForm.get('amount')}
-    // get discription(){return this.addProductForm.get('discription')}
+    get productname(){return this.addProductForm.get('productname')}
+    get category(){return this.addProductForm.get('category')}
+    get brand(){return this.addProductForm.get('brand')}
+    get price(){return this.addProductForm.get('price')}
+    get sale(){return this.addProductForm.get('sale')}
+    get amount(){return this.addProductForm.get('amount')}
+    get discription(){return this.addProductForm.get('discription')}
 
     handeladdProduct(){
     this.isSubmitted=true
@@ -40,13 +42,14 @@ export class AddProductComponent implements OnInit {
         (res)=>{
         },
         (err)=>{
-          this.productNameUsedBefore=true
+          console.log(err)
+          this.productnameUsedBefore=true
         },
         ()=>{
 
             this.addProductForm.reset()
             this.isSubmitted=false
-            this._router.navigateByUrl('/allProducts')
+            this._router.navigateByUrl('/admins/allProducts')
         }
       )
     }
