@@ -57,6 +57,7 @@ class Users {
             apiStatus: true,
             message:"you are looged out"
             
+            
         })
     }
     //delete user

@@ -1,0 +1,66 @@
+<section class="container my-5">
+
+
+
+  <form [formGroup]="addProductForm" (ngSubmit)="handeladdProduct()">
+    <div class="mb-5 row">
+      <div class="mb-3 col-12">
+        <input class="form-control" placeholder="product name" formControlName="productName"
+          (input)="this.productNameUsedBefore=false">
+        <div class="my-3 alert alert-danger"
+          *ngIf="productName?.invalid && (isSubmitted || productName?.dirty || productName?.touched)">
+          <p *ngIf="productName?.errors?.['required']"> product Name Is Required</p>
+          <p *ngIf="productName?.errors?.['minlength']"> product Name Must Be More Than 3 charachters</p>
+          <div class="my-3 alert alert-danger" *ngIf="productNameUsedBefore">
+            <p> product Name Used Before</p>
+          </div>
+        </div>
+      </div>
+      <div class="mb-3 col-12">
+        <input class="form-control" placeholder="category" formControlName="category">
+        <div class="my-3 alert alert-danger"
+          *ngIf="category?.invalid && (isSubmitted || category?.dirty || category?.touched)">
+          <p *ngIf="category?.errors?.['required']"> category Is Required</p>
+
+        </div>
+
+      </div>
+      <div class="mb-3 col-12">
+        <input class="form-control" placeholder="brand" formControlName="brand">
+        <div class="my-3 alert alert-danger" *ngIf="brand?.invalid && (isSubmitted || brand?.dirty || brand?.touched)">
+          <p *ngIf="brand?.errors?.['required']"> brand Is Required</p>
+
+        </div>
+      </div>
+      <div class="mb-3 col-12">
+        <input class="form-control" placeholder="price" formControlName="price" type="number">
+        <div class="my-3 alert alert-danger" *ngIf="price?.invalid && (isSubmitted || price?.dirty || price?.touched)">
+          <p *ngIf="price?.errors?.['required']"> price Is Required</p>
+        </div>
+      </div>
+      <div class="mb-3 col-12">
+        <input class="form-control" placeholder="sale" formControlName="sale" type="number">
+
+      </div>
+      <div class="mb-3 col-12">
+        <input class="form-control" placeholder="amount" formControlName="amount" type="number">
+        <div class="my-3 alert alert-danger"
+          *ngIf="amount?.invalid && (isSubmitted || amount?.dirty || amount?.touched)">
+          <p *ngIf="amount?.errors?.['required']"> amount Is Required</p>
+        </div>
+      </div>
+      <div class="mb-3 col-12">
+        <input class="form-control" placeholder="discription" formControlName="discription">
+        <div class="my-3 alert alert-danger"
+          *ngIf="discription?.invalid && (isSubmitted || discription?.dirty || discription?.touched)">
+          <p *ngIf="discription?.errors?.['required']"> discription Is Required</p>
+        </div>
+      </div>
+
+
+
+      <button class="form-control btn btn-success">Add Product</button>
+    </div>
+  </form>
+
+</section>

@@ -5,11 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './pages/shared/navbar/navbar.component';
 import { RegisterComponent } from './pages/register/register.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule, HTTP_INTERCEPTORS}  from '@angular/common/http';
 import { HomeComponent } from './pages/home/home.component';
 import { UsersLoginComponent } from './pages/users-login/users-login.component';
-import { ReactiveFormsModule } from '@angular/forms';
 import { UserInterceptor } from './providers/user.interceptor';
 import { UserEditProfileComponent } from './pages/user-edit-profile/user-edit-profile.component';
 import { ProductDetailsComponent } from './pages/product-details/product-details.component';
@@ -37,14 +36,14 @@ import { AdminsInterceptor } from './providers/admins/admins.interceptor';
     UserOrdersComponent,
     OrderDetailsComponent,
     AdminsLoginComponent,
-    ShowAllProductsComponent
+    ShowAllProductsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
 
   ],
   providers: [

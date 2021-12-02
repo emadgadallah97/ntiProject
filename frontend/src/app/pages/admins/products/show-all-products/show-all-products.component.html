@@ -1,4 +1,59 @@
-<form (ngSubmit)="submitfile()" #img="ngForm">
+<!-- {{productsData|json}} -->
+<section class="container">
+
+
+<table class="table my-4">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Product Name</th>
+      <th scope="col">Category</th>
+      <th scope="col">Brand</th>
+      <th scope="col">discription</th>
+      <th scope="col">Price</th>
+      <th scope="col">Sale</th>
+      <th scope="col">Amount</th>
+      <th scope="col">image</th>
+      <th scope="col">Actions</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of productsData;let i=index">
+      <th scope="row">{{i+1}}</th>
+      <td>{{item.productname}}</td>
+      <td>{{item.category}}</td>
+      <td>{{item.brand}}</td>
+      <td>{{item.discription}}</td>
+      <td>{{item.price}} LE</td>
+      <td>{{item.sale}} %</td>
+      <td>{{item.amount}} </td>
+      <td><img [src]="item.images[0].image" class="img-fluid"></td>
+      <td><button class="btn btn-danger" (click)="removeProduct(item._id)">Remove</button>
+        <button class="btn btn-warning">Edit</button>
+      </td>
+
+    </tr>
+
+  </tbody>
+</table>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <form (ngSubmit)="submitfile()" #img="ngForm">
   <input type="file" (change)="onChange($event)">
   <button>upload</button>
-</form>
+</form> -->

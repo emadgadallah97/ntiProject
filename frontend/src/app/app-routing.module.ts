@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminsLoginComponent } from './pages/admins/admins-login/admins-login.component';
+import { AddProductComponent } from './pages/admins/products/add-product/add-product.component';
 import { ShowAllProductsComponent } from './pages/admins/products/show-all-products/show-all-products.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -19,13 +20,14 @@ const routes: Routes = [
   {path:"home",component:HomeComponent},
   {path:"login", component:UsersLoginComponent},
   {path:"editProfile",component:UserEditProfileComponent,canActivate:[UserAuthGuard]},
-  {path:"products/:id",component:ProductDetailsComponent},
-  {path:"cart",component:CartComponent},
-  {path:"makeOrder",component:MakeOrderComponent},
-  {path:"orders",component:UserOrdersComponent},
-  {path:"orders/orderDetails/:id",component:OrderDetailsComponent},
+  {path:"products/:id",component:ProductDetailsComponent,canActivate:[UserAuthGuard]},
+  {path:"cart",component:CartComponent,canActivate:[UserAuthGuard]},
+  {path:"makeOrder",component:MakeOrderComponent,canActivate:[UserAuthGuard]},
+  {path:"orders",component:UserOrdersComponent,canActivate:[UserAuthGuard]},
+  {path:"orders/orderDetails/:id",component:OrderDetailsComponent,canActivate:[UserAuthGuard]},
   {path:"admin/login",component:AdminsLoginComponent},
-  {path:"admins/allProducts",component:ShowAllProductsComponent}
+  {path:"admins/allProducts",component:ShowAllProductsComponent},
+  {path:"admins/addProduct", component:AddProductComponent}
 
 ];
 
@@ -33,4 +35,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
